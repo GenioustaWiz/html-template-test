@@ -1,0 +1,1013 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Ng'aari Foundation - Empowering Children Through Arts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <style>
+        /* Theme Variables */
+        :root {
+            --bg-primary: #1a252f;
+            --bg-secondary: #2c3e50;
+            --even-bg-color: #494747;
+            --primary-color: #6CDAE7;
+            --primary-color-yellow: #FFFF00;
+            --accent-color: #2c3e50;
+            --text-primary: #ffffff;
+            --text-body: #ddd;
+            --card-bg: #2c3e50;
+            --card-shadow: rgba(0, 0, 0, 0.5);
+            --button-bg: 255, 0, 0;
+            --button-bg-hover: #c0392b;
+            --box-shadow: rgba(120, 119, 119, 0.3);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --even-bg-color: #c2c1c1;
+            --text-primary: #333;
+            --text-body: #666;
+            --card-bg: #ffffff;
+            --card-shadow: rgba(0, 0, 0, 0.1);
+            --box-shadow: rgba(16, 15, 15, 0.3);
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 15px auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: rgba(var(--button-bg), 0.8);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: var(--button-bg-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--box-shadow);
+        }
+
+        /* Hero Section */
+.hero {
+    min-height: fit-content;
+    background-color: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.hero-slider {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.hero-content.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image {
+    flex: 1;
+    height: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+}
+
+.hero-text {
+    flex: 1;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    margin-left: -100px;
+    z-index: 2;
+}
+
+.hero-text h4 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--text-body);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.hero-buttons .cta-button.learnmore {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.hero-buttons .cta-button.learnmore:hover {
+    background-color: var(--primary-color);
+    color: var(--text-primary);
+}
+
+        /* Impact Section */
+        .impact {
+            background-color: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background-color: var(--card-bg);
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--bg-primary);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+            box-shadow: 0 5px 15px var(--card-shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .gallery-btn {
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        /* Programs Section */
+        .programs {
+            background-color: var(--bg-secondary);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .program-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--card-shadow);
+        }
+
+        .program-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .program-card:hover .program-image img {
+            transform: scale(1.1);
+        }
+
+        .program-content {
+            padding: 20px;
+        }
+
+        .program-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--bg-primary);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .testimonial-slide p {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-slide p::before,
+        .testimonial-slide p::after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .slider-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Success Stories */
+        .success-stories {
+            background-color: var(--bg-secondary);
+        }
+
+        .story-carousel {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .story-slide {
+            min-width: 100%;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .story-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--card-shadow);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .story-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .story-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .story-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .story-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--text-body);
+            cursor: pointer;
+        }
+
+        .story-indicator.active {
+            background-color: var(--primary-color);
+        }
+
+        /* Donation Section */
+        .donation {
+            background-color: var(--bg-primary);
+            text-align: center;
+        }
+
+        .donation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .donation-option {
+            background-color: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--card-shadow);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .donation-option:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--card-shadow);
+        }
+
+        .donation-option.active {
+            border: 2px solid var(--primary-color);
+        }
+
+        .donation-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 15px 0;
+        }
+
+        .custom-donation {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .custom-donation input {
+            width: 100%;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid var(--text-body);
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            padding: 60px 0 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h5 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: var(--text-body);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--text-body);
+            color: var(--text-body);
+        }
+        @media (min-width: 993px){
+            .hero{
+                padding-top: 60px;
+            }
+            .hero-text{
+                display: flex;
+                align-content: center;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: fit-content;
+                width: 100px;
+            }
+            .hero-content{
+                display: flex;
+                align-items: center;
+                height: auto;
+                width: auto;
+            }
+            .hero-text{
+                padding: 20px;
+                margin-right: 20px;
+            }
+
+        }
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .cta-button {
+                /* display: inline-block; */
+                display: flex;
+                align-items: center;
+                padding: 5px 25px
+            }
+            .hero-slider {
+        position: static;
+    }
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        /* position: relative; */
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .hero-content.active {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .hero-text {
+        margin-left: 0;
+        margin-top: -50px;
+    }
+
+            .story-slide {
+                flex-direction: column;
+            }
+
+            .story-image {
+                width: 100%;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: auto;
+                padding: 0 0;
+            }
+
+            .hero-text h4 {
+                font-size: 1.2rem;
+            }
+            .hero-text p {
+                font-size: 0.8rem;
+            }
+            .hero-buttons {
+                /* flex-direction: column; */
+                gap: 15px;
+                font-size: 0.8rem;
+                justify-content: center;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 40px 0;
+            }
+            .hero{
+                padding: 0 0;
+            }
+
+            .hero-text {
+                padding: 20px;
+            }
+
+            /* .hero-text h4 {
+                font-size: 1.8rem;
+            } */
+
+            .stat-card {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-content active">
+                <div class="hero-image container">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Children learning art">
+                </div>
+                <div class="hero-text">
+                    <h4>Empowering Children Through Arts</h4>
+                    <p>We provide creative education and artistic opportunities to underprivileged children, helping them discover their potential and express themselves through various art forms.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="cta-button">Contact Us</a>
+                        <a href="#programs" class="cta-button learnmore">Our Programs</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-image container">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Art workshop">
+                </div>
+                <div class="hero-text">
+                    <h4>Creative Workshops & Training</h4>
+                    <p>Our professional artists conduct regular workshops to nurture young talents and provide them with skills that can transform their lives.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="cta-button">Join Us</a>
+                        <a href="#gallery" class="cta-button learnmore">See Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact">
+        <div class="container">
+            <h2 class="section-title">Our Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">1,200+</div>
+                    <p>Children Empowered</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <p>Art Workshops Conducted</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15</div>
+                    <p>Communities Reached</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30+</div>
+                    <p>Professional Artists Engaged</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Painting Workshop">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-caption">Painting Workshop</h3>
+                        <p class="gallery-description">Children exploring colors and creativity in our weekly painting sessions</p>
+                        <a href="#" class="cta-button gallery-btn">View More</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dance Performance">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-caption">Dance Performance</h3>
+                        <p class="gallery-description">Annual cultural dance showcase featuring our talented students</p>
+                        <a href="#" class="cta-button gallery-btn">View More</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Music Class">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-caption">Music Class</h3>
+                        <p class="gallery-description">Learning traditional and modern musical instruments</p>
+                        <a href="#" class="cta-button gallery-btn">View More</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Art Exhibition">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-caption">Art Exhibition</h3>
+                        <p class="gallery-description">Showcasing our students' amazing artworks to the community</p>
+                        <a href="#" class="cta-button gallery-btn">View More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <h2 class="section-title">Our Programs</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Visual Arts Program">
+                    </div>
+                    <div class="program-content">
+                        <h3>Visual Arts Program</h3>
+                        <p>Weekly classes in painting, drawing, and sculpture for children ages 6-16, taught by professional artists.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Music Education">
+                    </div>
+                    <div class="program-content">
+                        <h3>Music Education</h3>
+                        <p>Instrumental training and vocal lessons to develop musical talents and appreciation.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dance & Movement">
+                    </div>
+                    <div class="program-content">
+                        <h3>Dance & Movement</h3>
+                        <p>Traditional and contemporary dance classes promoting physical expression and cultural heritage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What People Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-slide">
+                        <p>My daughter discovered her passion for painting through this program. Her confidence has grown tremendously, and she now dreams of becoming an artist.</p>
+                        <div class="testimonial-author">- Sarah M., Parent</div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <p>As a volunteer art teacher, I've witnessed firsthand how transformative these programs are for children from disadvantaged backgrounds.</p>
+                        <div class="testimonial-author">- James K., Volunteer</div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <p>The music program gave me skills that changed my life. I now teach guitar to younger students at the center.</p>
+                        <div class="testimonial-author">- David W., Former Student</div>
+                    </div>
+                </div>
+                <div class="slider-buttons">
+                    <button class="slider-button t-prev">Previous</button>
+                    <button class="slider-button t-next">Next</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <div class="story-carousel">
+                <div class="story-track">
+                    <div class="story-slide">
+                        <div class="story-image">
+                            <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Maria's Story">
+                        </div>
+                        <div class="story-content">
+                            <h3>Maria's Journey</h3>
+                            <p>Maria joined our painting program at age 10. Today, she's a scholarship student at the National Art School and has exhibited her work in three cities.</p>
+                        </div>
+                    </div>
+                    <div class="story-slide">
+                        <div class="story-image">
+                            <img src="https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="The Drumming Group">
+                        </div>
+                        <div class="story-content">
+                            <h3>The Drumming Group</h3>
+                            <p>What started as a small percussion class has grown into a professional ensemble that performs at cultural events across the region.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-indicators"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="donation">
+        <div class="container">
+            <h2 class="section-title">Support Our Cause</h2>
+            <div class="donation-options">
+                <div class="donation-option" data-amount="25">
+                    <h3>Basic Support</h3>
+                    <div class="donation-amount">$25</div>
+                    <p>Provides art supplies for one child</p>
+                </div>
+                <div class="donation-option" data-amount="50">
+                    <h3>Regular Support</h3>
+                    <div class="donation-amount">$50</div>
+                    <p>Supports two children with essential supplies</p>
+                </div>
+                <div class="donation-option" data-amount="100">
+                    <h3>Premium Support</h3>
+                    <div class="donation-amount">$100</div>
+                    <p>Funds a complete workshop session</p>
+                </div>
+            </div>
+            <div class="custom-donation">
+                <h3>Custom Amount</h3>
+                <input type="number" min="1" placeholder="Enter amount">
+                <button class="cta-button">Donate Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h5>About Us</h5>
+                    <p>Studio Ng'aari Foundation is dedicated to inspiring, nurturing, and connecting young people through arts, culture, and technology.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#">Volunteer</a></li>
+                        <li><a href="#">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Contact Us</h5>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Kapsabet, Dagoretti</p>
+                        <p><i class="fas fa-phone-alt"></i> +254 704 168 140</p>
+                        <p><i class="fas fa-envelope"></i> info@studio-ngaari.org</p>
+                    </address>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Studio Ng'aari Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for theme toggle (can be enhanced)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hero Slider
+            const heroContents = document.querySelectorAll('.hero-content');
+            let currentHeroIndex = 0;
+            
+            function showNextHero() {
+                heroContents[currentHeroIndex].classList.remove('active');
+                currentHeroIndex = (currentHeroIndex + 1) % heroContents.length;
+                heroContents[currentHeroIndex].classList.add('active');
+            }
+            
+            setInterval(showNextHero, 5000);
+            
+            // Testimonial Slider
+            const tSlides = document.querySelectorAll('.testimonial-slide');
+            const tTrack = document.querySelector('.testimonial-track');
+            let currentTSlide = 0;
+            
+            document.querySelector('.t-next').addEventListener('click', () => {
+                currentTSlide = (currentTSlide + 1) % tSlides.length;
+                tTrack.style.transform = `translateX(-${currentTSlide * 100}%)`;
+            });
+            
+            document.querySelector('.t-prev').addEventListener('click', () => {
+                currentTSlide = (currentTSlide - 1 + tSlides.length) % tSlides.length;
+                tTrack.style.transform = `translateX(-${currentTSlide * 100}%)`;
+            });
+            
+            // Success Stories Carousel
+            const storySlides = document.querySelectorAll('.story-slide');
+            const storyTrack = document.querySelector('.story-track');
+            let currentStoryIndex = 0;
+            
+            // Create indicators
+            const indicatorsContainer = document.querySelector('.story-indicators');
+            storySlides.forEach((_, index) => {
+                const indicator = document.createElement('div');
+                indicator.classList.add('story-indicator');
+                if (index === 0) indicator.classList.add('active');
+                indicator.addEventListener('click', () => {
+                    currentStoryIndex = index;
+                    updateStoryCarousel();
+                });
+                indicatorsContainer.appendChild(indicator);
+            });
+            
+            function updateStoryCarousel() {
+                storyTrack.style.transform = `translateX(-${currentStoryIndex * 100}%)`;
+                document.querySelectorAll('.story-indicator').forEach((indicator, idx) => {
+                    indicator.classList.toggle('active', idx === currentStoryIndex);
+                });
+            }
+            
+            setInterval(() => {
+                currentStoryIndex = (currentStoryIndex + 1) % storySlides.length;
+                updateStoryCarousel();
+            }, 7000);
+            
+            // Donation Options
+            const donationOptions = document.querySelectorAll('.donation-option');
+            const customAmountInput = document.querySelector('.custom-donation input');
+            
+            donationOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    donationOptions.forEach(opt => opt.classList.remove('active'));
+                    option.classList.add('active');
+                    customAmountInput.value = option.dataset.amount;
+                });
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+
