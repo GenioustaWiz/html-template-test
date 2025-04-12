@@ -103,7 +103,16 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px var(--box-shadow);
         }
+        .cta-button.learnmore {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
 
+.cta-button.learnmore:hover {
+    background-color: var(--primary-color);
+    color: var(--text-primary);
+}
         /* Hero Section */
 .hero {
     min-height: fit-content;
@@ -178,16 +187,7 @@
     justify-content: center;
 }
 
-.hero-buttons .cta-button.learnmore {
-    background-color: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-}
 
-.hero-buttons .cta-button.learnmore:hover {
-    background-color: var(--primary-color);
-    color: var(--text-primary);
-}
 
         /* Impact Section */
         .impact {
@@ -228,7 +228,7 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
 
@@ -236,7 +236,7 @@
             position: relative;
             border-radius: 10px;
             overflow: hidden;
-            height: auto;
+            height: 300px;
             box-shadow: 0 5px 15px var(--card-shadow);
         }
 
@@ -663,7 +663,7 @@
             }
             .gallery-overlay p {
                 margin-top: 0;
-                margin-bottom: 0.8rem;
+                margin-bottom: 0.7rem;
             }
             .cta-button.gallery-btn{
                 padding: 0 25px;
@@ -760,7 +760,7 @@
                     <div class="gallery-overlay">
                         <h3 class="gallery-caption">Painting Workshop</h3>
                         <p class="gallery-description">Children exploring colors and creativity in our weekly painting sessions</p>
-                        <a href="#" class="cta-button gallery-btn">View More</a>
+                        <a href="#" class="cta-button learnmore gallery-btn">View More</a>
                     </div>
                 </div>
                 <div class="gallery-item">
